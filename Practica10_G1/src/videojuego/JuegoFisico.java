@@ -34,6 +34,16 @@ public class JuegoFisico extends Videojuego{
 		return "JuegoFisico [titulo=" + super.getTitulo() + ", genero=" + super.getGenero() + ", plataforma=" + super.getPlataforma() + ", precio="	+ super.getPrecio() + ", dis=" + this.dis + ", est=" + this.est + "]";
 	}
 	
+	@Override
+    public boolean equals(Object obj) {
+		JuegoFisico otro = (JuegoFisico) obj;
+        boolean result = false;
 
+        if (this.dis.equals(otro.getDis()) && this.est.equals(otro.getEst()) && super.equals(otro)){
+            result = true;
+        }
+        return result;
+
+    }
 	
 }
