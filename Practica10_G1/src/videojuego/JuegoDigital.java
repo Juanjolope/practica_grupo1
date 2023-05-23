@@ -1,6 +1,6 @@
 package videojuego;
 
-public class JuegoDigital {
+public class JuegoDigital extends Videojuego{
 	private double tamañoEnGB;
 
     public JuegoDigital(String título, String género, String plataforma, double precio,
