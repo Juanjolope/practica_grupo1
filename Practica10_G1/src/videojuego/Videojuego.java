@@ -53,6 +53,12 @@ public class Videojuego implements Comparable<Videojuego> {
 		return this.titulo.compareTo(o.titulo);
 	
 	}
+
+	@Override
+	public String toString() {
+		return "Videojuego [titulo=" + this.titulo + ", genero=" + this.genero + ", plataforma=" + this.plataforma + ", precio="
+				+ this.precio + "]";
+	}
 	
 	
 	
