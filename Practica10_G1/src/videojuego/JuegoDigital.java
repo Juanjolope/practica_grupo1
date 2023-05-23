@@ -1,4 +1,4 @@
-package JuegoDigital;
+package videojuego;
 
 public class JuegoDigital {
 
