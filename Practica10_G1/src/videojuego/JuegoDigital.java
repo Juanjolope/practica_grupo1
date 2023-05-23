@@ -1,12 +1,15 @@
 package videojuego;
 
-public class JuegoDigital extends Videojuego{
+public class JuegoDigital extends Videojuego implements Entregable{
+	
 	private double tamañoEnGB;
+	private boolean entregadoDigital;
 
     public JuegoDigital(String título, String género, String plataforma, double precio,
                         double tamañoEnGB) {
         super(título, género, plataforma, precio);
         this.tamañoEnGB = tamañoEnGB;
+        this.entregadoDigital = false;
     }
 
 	public double getTamañoEnGB() {
@@ -17,15 +20,39 @@ public class JuegoDigital extends Videojuego{
 		this.tamañoEnGB = tamañoEnGB;
 	}
 	
+	
+	public boolean isEntregado() {
+		return entregadoDigital;
+	}
+
+	public void setEntregado(boolean entregado) {
+		this.entregadoDigital = entregado;
+	}
+
 	@Override
     public boolean equals(Object obj) {
-		JuegoDigital otro = (JuegoDigital) obj;
+        Videojuego otro = (Videojuego) obj;
         boolean result = false;
 
-        if (this.tamañoEnGB== otro.getTamañoEnGB() && super.equals(otro)){
+        if (this.tamañoEnGB== this.tamañoEnGB && super.equals(otro)){
             result = true;
         }
         return result;
 
     }
-}
+
+	@Override
+	public void entregar() {
+		
+		if(this.isEntregado()){
+            System.out.println("El Videojuego digital " + super.getTitulo() + " ya ha sido entregado");
+        }else{
+            this.setEntregado(true);
+            System.out.println("Se ha entregado el Videojuego digital " + super.getTitulo());
+        }
+    }
+		
+	}
+	
+	
+

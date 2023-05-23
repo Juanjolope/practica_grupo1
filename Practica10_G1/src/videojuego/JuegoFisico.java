@@ -3,14 +3,17 @@ package videojuego;
 import enumerados.Disponibilidad;
 import enumerados.Estado;
 
-public class JuegoFisico extends Videojuego{
+public class JuegoFisico extends Videojuego implements Entregable{
+	
 	private Disponibilidad dis;
 	private Estado est;
+	private boolean entregarFisico;
 	
 	public JuegoFisico(String titulo, String genero, String plataforma, double precio, Disponibilidad dis, Estado est) {
 		super(titulo, genero, plataforma, precio);
 		this.dis = dis;
 		this.est = est;
+		this.entregarFisico = false;
 	}
 
 	public Disponibilidad getDis() {
@@ -27,6 +30,15 @@ public class JuegoFisico extends Videojuego{
 
 	public void setEst(Estado est) {
 		this.est = est;
+	}
+	
+
+	public boolean isEntregarFisico() {
+		return entregarFisico;
+	}
+
+	public void setEntregarFisico(boolean entregarFisico) {
+		this.entregarFisico = entregarFisico;
 	}
 
 	@Override
@@ -45,5 +57,18 @@ public class JuegoFisico extends Videojuego{
         return result;
 
     }
+
+	@Override
+	public void entregar() {
+		
+		if(this.isEntregarFisico()){
+            System.out.println("El Videojuego fisico " + super.getTitulo() + " ya ha sido entregado");
+        }else{
+            this.setEntregarFisico(true);
+            System.out.println("Se ha entregado el Videojuego fisico " + super.getTitulo());
+        }
+    }
+		
+	}
 	
-}
+	

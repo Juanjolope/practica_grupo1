@@ -1,7 +1,7 @@
-package interfaz;
+package videojuego;
 
 public interface Entregable {
 
-	void entregable();
+	void entregar();
 	
 }
