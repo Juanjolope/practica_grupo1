@@ -8,6 +8,6 @@ package proyectotema10;
  *
  * @author Usuario
  */
-public class videojuegos {
+public class Videojuego {
     
 }
