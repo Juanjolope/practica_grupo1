@@ -8,4 +8,12 @@ public class JuegoDigital extends Videojuego{
         super(título, género, plataforma, precio);
         this.tamañoEnGB = tamañoEnGB;
     }
+
+	public double getTamañoEnGB() {
+		return tamañoEnGB;
+	}
+
+	public void setTamañoEnGB(double tamañoEnGB) {
+		this.tamañoEnGB = tamañoEnGB;
+	}
 }
