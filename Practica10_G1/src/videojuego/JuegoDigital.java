@@ -17,5 +17,15 @@ public class JuegoDigital extends Videojuego{
 		this.tamañoEnGB = tamañoEnGB;
 	}
 	
-	
+	@Override
+    public boolean equals(Object obj) {
+        Videojuego otro = (Videojuego) obj;
+        boolean result = false;
+
+        if (this.tamañoEnGB== this.tamañoEnGB && super.equals(otro)){
+            result = true;
+        }
+        return result;
+
+    }
 }
