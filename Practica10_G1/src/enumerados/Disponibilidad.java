@@ -1,4 +1,4 @@
-package videojuego;
+package enumerados;
 
 public enum Disponibilidad {
 	STOCK, AGOTADO;

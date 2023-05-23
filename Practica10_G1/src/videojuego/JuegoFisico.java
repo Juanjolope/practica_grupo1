@@ -1,5 +1,8 @@
 package videojuego;
 
+import enumerados.Disponibilidad;
+import enumerados.Estado;
+
 public class JuegoFisico extends Videojuego{
 	private Disponibilidad dis;
 	private Estado est;

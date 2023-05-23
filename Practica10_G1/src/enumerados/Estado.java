@@ -1,4 +1,4 @@
-package videojuego;
+package enumerados;
 
 public enum Estado {
 	NUEVO, USADO;

@@ -16,12 +16,6 @@ public class JuegoDigital extends Videojuego{
 	public void setTamañoEnGB(double tamañoEnGB) {
 		this.tamañoEnGB = tamañoEnGB;
 	}
-
-	@Override
-	public String toString() {
-		return "JuegoDigital [titulo=" + super.getTitulo() + ", genero=" + super.getGenero() + ", plataforma=" + super.getPlataforma() + ", precio="
-				+ super.getPrecio() + "tamañoEnGB=" + this.tamañoEnGB + "]";
-	}
 	
 	
 }
