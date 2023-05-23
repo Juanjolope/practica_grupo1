@@ -35,4 +35,15 @@ public class TiendaVideojuegos {
 	 
 	 
  };*/
+	 @Override
+	    public boolean equals(Object obj) {
+		 TiendaVideojuegos otro = (TiendaVideojuegos) obj;
+	        boolean result = false;
+
+	        if (this.inventario.equals(otro.getInventario()) && super.equals(otro)){
+	            result = true;
+	        }
+	        return result;
+
+	    }
 }
