@@ -24,6 +24,9 @@ GAME.agregarVideojuego(juego4);
 	GAME.busquedaJuegoPlataforma("sexo", "ps4");
 	System.out.println("---------");
 	GAME.mostrarJuegoMasCaro();
+	System.out.println("---------");
+	GAME.mostrarJuegoMasBarato();
+	
 	
 	}
 

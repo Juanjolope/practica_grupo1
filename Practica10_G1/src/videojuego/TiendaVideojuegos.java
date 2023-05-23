@@ -86,7 +86,23 @@ public class TiendaVideojuegos {
 	            System.out.println("No se encontró ningún juego en el inventario.");
 	        }
 	    }
-	public void mostrarJuegoMasBarato() {}
+	 public void mostrarJuegoMasBarato() {
+	        Videojuego juegoMasBarato = null;
+	        double precioMasBajo = Double.MAX_VALUE;
+
+	        for (Videojuego juego : inventario) {
+	            if (juego.getPrecio() < precioMasBajo) {
+	                precioMasBajo = juego.getPrecio();
+	                juegoMasBarato = juego;
+	            }
+	        }
+
+	        if (juegoMasBarato != null) {
+	            System.out.println("Juego más barato: " + juegoMasBarato.getTitulo() + ", Precio: $" + juegoMasBarato.getPrecio());
+	        } else {
+	            System.out.println("No se encontró ningún juego en el inventario.");
+	        }
+	    }
 	
 	 
 	 @Override
