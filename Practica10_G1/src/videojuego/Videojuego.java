@@ -1,12 +1,12 @@
 package videojuego;
 
 public class Videojuego implements Comparable<Videojuego> {
-
+//atributos
 	private String titulo;
 	private String genero;
 	private String plataforma;
 	private double precio;
-	
+//constructores	
 	public Videojuego(String titulo, String genero, String plataforma, double precio) {
 		
 		this.titulo = titulo;
@@ -14,7 +14,7 @@ public class Videojuego implements Comparable<Videojuego> {
 		this.plataforma = plataforma;
 		this.precio = precio;
 	}
-
+//getter y setter
 	public String getTitulo() {
 		return titulo;
 	}
@@ -46,6 +46,7 @@ public class Videojuego implements Comparable<Videojuego> {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+	//metodos
 
 	@Override
 	public int compareTo(Videojuego o) {
