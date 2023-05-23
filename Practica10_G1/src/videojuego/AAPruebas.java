@@ -20,6 +20,8 @@ GAME.agregarVideojuego(juego4);
 	GAME.mostrarListainventario();
 	System.out.println("---------");
 	GAME.mostrarJuegosDisponiblesOrdenados();
+	System.out.println("---------");
+	GAME.busquedaJuegoPlataforma("sexo", "ps4");
 	
 	}
 

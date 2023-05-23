@@ -49,8 +49,25 @@ public class TiendaVideojuegos {
 	        }
     }
 	
+	 public void busquedaJuegoPlataforma(String genero, String plataforma) {
+	        List<Videojuego> juegosEncontrados = new ArrayList<>();
 
+	        for (Videojuego juego : inventario) {
+	            if (juego.getGenero().equalsIgnoreCase(genero) && juego.getPlataforma().equalsIgnoreCase(plataforma)) {
+	                juegosEncontrados.add(juego);
+	            }
+	        }
 
+	        if (juegosEncontrados.isEmpty()) {
+	            System.out.println("No se encontraron juegos con el género '" + genero + "' y plataforma '" + plataforma + "'.");
+	        } else {
+	            System.out.println("Juegos encontrados con el género '" + genero + "' y plataforma '" + plataforma + "':");
+	            for (Videojuego juego : juegosEncontrados) {
+	                System.out.println("Título: " + juego.getTitulo() + ", Género: " + juego.getGenero() + ", Plataforma: "
+	                        + juego.getPlataforma() + ", Precio: $" + juego.getPrecio());
+	            }
+	        }
+	    }
 	 
 	
 	 
