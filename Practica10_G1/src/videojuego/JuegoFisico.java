@@ -7,12 +7,14 @@ public class JuegoFisico extends Videojuego{
 	private Disponibilidad dis;
 	private Estado est;
 	
+	//constructor
 	public JuegoFisico(String titulo, String genero, String plataforma, double precio, Disponibilidad dis, Estado est) {
 		super(titulo, genero, plataforma, precio);
 		this.dis = dis;
 		this.est = est;
 	}
-
+	
+	//getter y setter
 	public Disponibilidad getDis() {
 		return dis;
 	}

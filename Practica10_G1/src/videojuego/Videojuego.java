@@ -46,11 +46,10 @@ public class Videojuego implements Comparable<Videojuego> {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+	
 	//metodos
-
 	@Override
 	public int compareTo(Videojuego o) {
-	
 		return this.titulo.compareTo(o.titulo);
 	
 	}
