@@ -46,11 +46,10 @@ public class Videojuego implements Comparable<Videojuego> {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+	
 	//metodos
-
 	@Override
 	public int compareTo(Videojuego o) {
-	
 		return this.titulo.compareTo(o.titulo);
 	
 	}
@@ -61,17 +60,7 @@ public class Videojuego implements Comparable<Videojuego> {
 				+ this.precio + "]";
 	}
 	
-	@Override
-    public boolean equals(Object obj) {
-        Videojuego otro = (Videojuego) obj;
-        boolean result = false;
-
-        if (this.genero.equals(otro.genero) && this.titulo.equals(otro.titulo)&& this.plataforma.equals(otro.plataforma) && this.precio == otro.precio){
-            result = true;
-        } 
-        return result;
-
-    }
+	
 	
 	
 }

@@ -16,8 +16,8 @@ public class TiendaVideojuegos {
 		this.nombre=nombre;
 		this.inventario = new TreeSet<>();
 	}
+	
 	//getter y setter
-
 	public Set<Videojuego> getInventario() {
 		return inventario;
 	}
@@ -30,6 +30,7 @@ public class TiendaVideojuegos {
 	 public void agregarVideojuego(Videojuego videojuego) {
 		 inventario.add(videojuego); 
 	 };
+
 	
 	public void mostrarListainventario() {
 		for (Videojuego juego : inventario) {
@@ -49,6 +50,10 @@ public class TiendaVideojuegos {
     }
 	
 
+
+	 
+	
+	 
 	 @Override
 	    public boolean equals(Object obj) {
 		 TiendaVideojuegos otro = (TiendaVideojuegos) obj;

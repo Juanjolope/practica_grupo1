@@ -9,18 +9,18 @@ public class Cliente extends Videojuego{
 	private String direccion;
 	private List <Videojuego> comprados;
 	
+	//constructor
 	public Cliente(String titulo, String genero, String plataforma, double precio, String nombre, String direccion) {
 		super(titulo, genero, plataforma, precio);
 		this.nombre = nombre;
 		this.direccion = direccion;
-		this.comprados = new LinkedList<>();
-		
-		
+		this.comprados = new LinkedList<>();	
 	}
 
+	//getters & setters
 	public String getNombre() {
 		return nombre;
-	}
+	} 
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
