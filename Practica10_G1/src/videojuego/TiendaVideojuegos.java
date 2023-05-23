@@ -12,8 +12,8 @@ public class TiendaVideojuegos {
 		
 		this.inventario = new TreeSet<>();
 	}
+	
 	//getter y setter
-
 	public Set<Videojuego> getInventario() {
 		return inventario;
 	}
@@ -26,15 +26,14 @@ public class TiendaVideojuegos {
 	 public void agregarVideojuego(Videojuego videojuego) {
 		 inventario.add(videojuego); 
 	 };
-	
- /*
- Set<Videojuego> inventario = new Set();
- 
- public void agregarVideojuego(String titulo, String genero, String plataforma, double precio) {
-	 inventario.add(new Videojuego(titulo, genero, plataforma, precio));
 	 
+	 public void mostrarJuegosDisponiblesOrdenados() {
+	        for (Videojuego juego : inventario) {
+	            System.out.println("Título: " + juego.getTitulo() + ", Género: " + juego.getGenero()
+	                    + ", Plataforma: " + juego.getPlataforma() + ", Precio: $" + juego.getPrecio());
+	        }
+	    }
 	 
- };*/
 	 @Override
 	    public boolean equals(Object obj) {
 		 TiendaVideojuegos otro = (TiendaVideojuegos) obj;

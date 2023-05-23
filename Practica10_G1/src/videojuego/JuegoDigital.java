@@ -5,6 +5,7 @@ public class JuegoDigital extends Videojuego implements Entregable{
 	private double tamañoEnGB;
 	private boolean entregadoDigital;
 
+	//constructor
     public JuegoDigital(String título, String género, String plataforma, double precio,
                         double tamañoEnGB) {
         super(título, género, plataforma, precio);
@@ -12,6 +13,7 @@ public class JuegoDigital extends Videojuego implements Entregable{
         this.entregadoDigital = false;
     }
 
+    //getters & setters
 	public double getTamañoEnGB() {
 		return tamañoEnGB;
 	}
