@@ -1,11 +1,21 @@
 package videojuego;
 
+import enumerados.Disponibilidad;
+
 public class Videojuego implements Comparable<Videojuego> {
 //atributos
 	private String titulo;
 	private String genero;
 	private String plataforma;
 	private double precio;
+	  public Disponibilidad getDisponibilidad() {
+		return disponibilidad;
+	}
+	public void setDisponibilidad(Disponibilidad disponibilidad) {
+		this.disponibilidad = disponibilidad;
+	}
+
+	private Disponibilidad disponibilidad;
 //constructores	
 	public Videojuego(String titulo, String genero, String plataforma, double precio) {
 		
@@ -13,6 +23,7 @@ public class Videojuego implements Comparable<Videojuego> {
 		this.genero = genero;
 		this.plataforma = plataforma;
 		this.precio = precio;
+		   this.disponibilidad = Disponibilidad.STOCK;
 	}
 //getter y setter
 	public String getTitulo() {

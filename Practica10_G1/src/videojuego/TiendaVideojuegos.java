@@ -5,9 +5,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+import enumerados.Disponibilidad;
+import enumerados.Estado;
+
 public class TiendaVideojuegos {
  //atributos
 	String nombre;
+	
 	private Set<Videojuego> inventario;
 	
 	//constructor
@@ -104,6 +108,17 @@ public class TiendaVideojuegos {
 	        }
 	    }
 	
+	 
+	 public void vender(Videojuego juego, Cliente cliente) {
+	        if (inventario.contains(juego)) {
+	            juego.setDisponibilidad(Disponibilidad.AGOTADO); // Actualiza la disponibilidad del juego
+	            cliente.getComprados().add(juego); // Agrega el juego a la lista de juegos comprados por el cliente
+	            System.out.println("¡Venta realizada con éxito!\nJuego vendido: " + juego.getTitulo() + "\nComprador: "
+	                    + cliente.getNombre());
+	        } else {
+	            System.out.println("El juego no está disponible en la tienda.");
+	        }
+	    }
 	 
 	 @Override
 	    public boolean equals(Object obj) {

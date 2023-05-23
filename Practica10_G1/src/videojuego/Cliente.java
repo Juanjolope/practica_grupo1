@@ -3,15 +3,15 @@ package videojuego;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Cliente extends Videojuego{
+public class Cliente {
 	
 	private String nombre;
 	private String direccion;
 	private List <Videojuego> comprados;
 	
 	//constructor
-	public Cliente(String titulo, String genero, String plataforma, double precio, String nombre, String direccion) {
-		super(titulo, genero, plataforma, precio);
+	public Cliente( String nombre, String direccion) {
+		
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.comprados = new LinkedList<>();	
@@ -44,8 +44,7 @@ public class Cliente extends Videojuego{
 
 	@Override
 	public String toString() {
-		return "Cliente [titulo=" + super.getTitulo() + ", genero=" + super.getGenero() + ", plataforma=" + super.getPlataforma() + ", precio="
-				+ super.getPrecio() + ", nombre=" + this.nombre + ", direccion=" + this.direccion + ", comprados=" + this.comprados + "]";
+		return "Cliente [ nombre=" + this.nombre + ", direccion=" + this.direccion + ", comprados=" + this.comprados + "]";
 	}
 	
 	@Override

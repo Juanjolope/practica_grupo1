@@ -10,7 +10,7 @@ Videojuego juego1 = new Videojuego("LOL", "accyon", "pc", 2);
 Videojuego juego2 = new Videojuego("ark", "farmeo", "pc", 6);
 Videojuego juego3 = new Videojuego("furry", "sexo", "ps4",4);
 Videojuego juego4 = new Videojuego("manu y sus cosas", "sangre", "pc", 1);
-
+Cliente c1= new Cliente("pepe", "a");
 
 GAME.agregarVideojuego(juego1);
 GAME.agregarVideojuego(juego2);
@@ -26,7 +26,8 @@ GAME.agregarVideojuego(juego4);
 	GAME.mostrarJuegoMasCaro();
 	System.out.println("---------");
 	GAME.mostrarJuegoMasBarato();
-	
+	System.out.println("---------");
+	GAME.vender(juego4, c1);
 	
 	}
 
