@@ -34,6 +34,6 @@ public class JuegoFisico extends Videojuego{
 		return "JuegoFisico [titulo=" + super.getTitulo() + ", genero=" + super.getGenero() + ", plataforma=" + super.getPlataforma() + ", precio="	+ super.getPrecio() + ", dis=" + this.dis + ", est=" + this.est + "]";
 	}
 	
-	
+
 	
 }

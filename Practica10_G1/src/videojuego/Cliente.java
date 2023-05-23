@@ -48,5 +48,16 @@ public class Cliente extends Videojuego{
 				+ super.getPrecio() + ", nombre=" + this.nombre + ", direccion=" + this.direccion + ", comprados=" + this.comprados + "]";
 	}
 	
+	@Override
+    public boolean equals(Object obj) {
+		Cliente otro = (Cliente) obj;
+        boolean result = false;
+
+        if (this.nombre.equals(otro.getNombre()) && super.equals(otro)&& this.direccion.equals(otro.getDireccion())){
+            result = true;
+        }
+        return result;
+
+    }
 
 }

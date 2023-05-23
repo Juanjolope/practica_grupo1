@@ -19,10 +19,10 @@ public class JuegoDigital extends Videojuego{
 	
 	@Override
     public boolean equals(Object obj) {
-        Videojuego otro = (Videojuego) obj;
+		JuegoDigital otro = (JuegoDigital) obj;
         boolean result = false;
 
-        if (this.tamañoEnGB== this.tamañoEnGB && super.equals(otro)){
+        if (this.tamañoEnGB== otro.getTamañoEnGB() && super.equals(otro)){
             result = true;
         }
         return result;
