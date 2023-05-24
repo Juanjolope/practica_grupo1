@@ -1,4 +1,5 @@
 package videojuego;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -9,19 +10,19 @@ import enumerados.Disponibilidad;
 import enumerados.Estado;
 
 public class TiendaVideojuegos {
- //atributos
+	// atributos
 	String nombre;
-	
+
 	private Set<Videojuego> inventario;
-	
-	//constructor
-	
+
+	// constructor
+
 	public TiendaVideojuegos(String nombre) {
-		this.nombre=nombre;
+		this.nombre = nombre;
 		this.inventario = new TreeSet<>();
 	}
-	
-	//getter y setter
+
+	// getter y setter
 	public Set<Videojuego> getInventario() {
 		return inventario;
 	}
@@ -29,106 +30,114 @@ public class TiendaVideojuegos {
 	public void setInventario(Set<Videojuego> inventario) {
 		this.inventario = inventario;
 	}
-	
-	//metodos
-	 public void agregarVideojuego(Videojuego videojuego) {
-		 inventario.add(videojuego); 
-	 };
 
-	
+	// metodos
+	public void agregarVideojuego(Videojuego videojuego) {
+		inventario.add(videojuego);
+	};
+
 	public void mostrarListainventario() {
 		for (Videojuego juego : inventario) {
-            System.out.println("Título: " + juego.getTitulo() + ", Género: " + juego.getGenero()
-                    + ", Plataforma: " + juego.getPlataforma() + ", Precio: $" + juego.getPrecio());
-        }
+			System.out.println("Título: " + juego.getTitulo() + ", Género: " + juego.getGenero() + ", Plataforma: "
+					+ juego.getPlataforma() + ", Precio: $" + juego.getPrecio());
+		}
 	}
-	
+
 	public void mostrarJuegosDisponiblesOrdenados() {
-		 List<Videojuego> juegosOrdenados = new ArrayList<>(inventario);
-	        Collections.sort(juegosOrdenados, (juego1, juego2) -> juego1.getTitulo().compareToIgnoreCase(juego2.getTitulo()));
+		List<Videojuego> juegosOrdenados = new ArrayList<>(inventario);
+		Collections.sort(juegosOrdenados,
+				(juego1, juego2) -> juego1.getTitulo().compareToIgnoreCase(juego2.getTitulo()));
 
-	        for (Videojuego juego : juegosOrdenados) {
-	            System.out.println("Título: " + juego.getTitulo() + ", Género: " + juego.getGenero() + ", Plataforma: "
-	                    + juego.getPlataforma() + ", Precio: $" + juego.getPrecio());
-	        }
-    }
-	
-	 public void busquedaJuegoPlataforma(String genero, String plataforma) {
-	        List<Videojuego> juegosEncontrados = new ArrayList<>();
+		for (Videojuego juego : juegosOrdenados) {
+			System.out.println("Título: " + juego.getTitulo() + ", Género: " + juego.getGenero() + ", Plataforma: "
+					+ juego.getPlataforma() + ", Precio: $" + juego.getPrecio());
+		}
+	}
 
-	        for (Videojuego juego : inventario) {
-	            if (juego.getGenero().equalsIgnoreCase(genero) && juego.getPlataforma().equalsIgnoreCase(plataforma)) {
-	                juegosEncontrados.add(juego);
-	            }
-	        }
+	public void busquedaJuegoPlataforma(String genero, String plataforma) {
+		List<Videojuego> juegosEncontrados = new ArrayList<>();
 
-	        if (juegosEncontrados.isEmpty()) {
-	            System.out.println("No se encontraron juegos con el género '" + genero + "' y plataforma '" + plataforma + "'.");
-	        } else {
-	            System.out.println("Juegos encontrados con el género '" + genero + "' y plataforma '" + plataforma + "':");
-	            for (Videojuego juego : juegosEncontrados) {
-	                System.out.println("Título: " + juego.getTitulo() + ", Género: " + juego.getGenero() + ", Plataforma: "
-	                        + juego.getPlataforma() + ", Precio: $" + juego.getPrecio());
-	            }
-	        }
-	    }
-	 
-	 public void mostrarJuegoMasCaro() {
-	        Videojuego juegoMasCaro = null;
-	        double precioMasAlto = Double.MIN_VALUE;
+		for (Videojuego juego : inventario) {
+			if (juego.getGenero().equalsIgnoreCase(genero) && juego.getPlataforma().equalsIgnoreCase(plataforma)) {
+				juegosEncontrados.add(juego);
+			}
+		}
 
-	        for (Videojuego juego : inventario) {
-	            if (juego.getPrecio() > precioMasAlto) {
-	                precioMasAlto = juego.getPrecio();
-	                juegoMasCaro = juego;
-	            }
-	        }
+		if (juegosEncontrados.isEmpty()) {
+			System.out.println(
+					"No se encontraron juegos con el género '" + genero + "' y plataforma '" + plataforma + "'.");
+		} else {
+			System.out.println("Juegos encontrados con el género '" + genero + "' y plataforma '" + plataforma + "':");
+			for (Videojuego juego : juegosEncontrados) {
+				System.out.println("Título: " + juego.getTitulo() + ", Género: " + juego.getGenero() + ", Plataforma: "
+						+ juego.getPlataforma() + ", Precio: $" + juego.getPrecio());
+			}
+		}
+	}
 
-	        if (juegoMasCaro != null) {
-	            System.out.println("Juego más caro: " + juegoMasCaro.getTitulo() + ", Precio: $" + juegoMasCaro.getPrecio());
-	        } else {
-	            System.out.println("No se encontró ningún juego en el inventario.");
-	        }
-	    }
-	 public void mostrarJuegoMasBarato() {
-	        Videojuego juegoMasBarato = null;
-	        double precioMasBajo = Double.MAX_VALUE;
+	public void mostrarJuegoMasCaro() {
+		Videojuego juegoMasCaro = null;
+		double precioMasAlto = Double.MIN_VALUE;
 
-	        for (Videojuego juego : inventario) {
-	            if (juego.getPrecio() < precioMasBajo) {
-	                precioMasBajo = juego.getPrecio();
-	                juegoMasBarato = juego;
-	            }
-	        }
+		for (Videojuego juego : inventario) {
+			if (juego.getPrecio() > precioMasAlto) {
+				precioMasAlto = juego.getPrecio();
+				juegoMasCaro = juego;
+			}
+		}
 
-	        if (juegoMasBarato != null) {
-	            System.out.println("Juego más barato: " + juegoMasBarato.getTitulo() + ", Precio: $" + juegoMasBarato.getPrecio());
-	        } else {
-	            System.out.println("No se encontró ningún juego en el inventario.");
-	        }
-	    }
-	
-	 
-	 public void vender(Videojuego juego, Cliente cliente) {
-	        if (inventario.contains(juego)) {
-	            juego.setDisponibilidad(Disponibilidad.AGOTADO); // Actualiza la disponibilidad del juego
-	            cliente.getComprados().add(juego); // Agrega el juego a la lista de juegos comprados por el cliente
-	            System.out.println("¡Venta realizada con éxito!\nJuego vendido: " + juego.getTitulo() + "\nComprador: "
-	                    + cliente.getNombre());
-	        } else {
-	            System.out.println("El juego no está disponible en la tienda.");
-	        }
-	    }
-	 
-	 @Override
-	    public boolean equals(Object obj) {
-		 TiendaVideojuegos otro = (TiendaVideojuegos) obj;
-	        boolean result = false;
+		if (juegoMasCaro != null) {
+			System.out
+					.println("Juego más caro: " + juegoMasCaro.getTitulo() + ", Precio: $" + juegoMasCaro.getPrecio());
+		} else {
+			System.out.println("No se encontró ningún juego en el inventario.");
+		}
+	}
 
-	        if (this.inventario.equals(otro.getInventario()) && super.equals(otro)){
-	            result = true;
-	        }
-	        return result;
+	public void mostrarJuegoMasBarato() {
+		Videojuego juegoMasBarato = null;
+		double precioMasBajo = Double.MAX_VALUE;
 
-	    }
+		for (Videojuego juego : inventario) {
+			if (juego.getPrecio() < precioMasBajo) {
+				precioMasBajo = juego.getPrecio();
+				juegoMasBarato = juego;
+			}
+		}
+
+		if (juegoMasBarato != null) {
+			System.out.println(
+					"Juego más barato: " + juegoMasBarato.getTitulo() + ", Precio: $" + juegoMasBarato.getPrecio());
+		} else {
+			System.out.println("No se encontró ningún juego en el inventario.");
+		}
+	}
+
+	public void vender(Videojuego juego, Cliente cliente) {
+		if (inventario.contains(juego)) {
+			juego.setDisponibilidad(Disponibilidad.AGOTADO); // Actualiza la disponibilidad del juego
+			cliente.getComprados().add(juego); // Agrega el juego a la lista de juegos comprados por el cliente
+			System.out.println("¡Venta realizada con éxito!\nJuego vendido: " + juego.getTitulo() + "\nComprador: "
+					+ cliente.getNombre());
+		} else {
+			System.out.println("El juego no está disponible en la tienda.");
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "TiendaVideojuegos [nombre=" + this.nombre + ", inventario=" + this.inventario + "]";
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		TiendaVideojuegos otro = (TiendaVideojuegos) obj;
+		boolean result = false;
+
+		if (this.inventario.equals(otro.getInventario()) && this.nombre.equals(otro.nombre)) {
+			result = true;
+		}
+		return result;
+
+	}
 }
